@@ -1,4 +1,4 @@
-function bubblesort(arr){
+function bubblesort(arr, cmp = (a, b) => a - b){
 	var swapped;
 
 	if (!arr.length || arr.length == 1) {
@@ -7,9 +7,9 @@ function bubblesort(arr){
 
 	do {
 		swapped = false;
-		for (var i = 0; i < arr.length - 1; i++) {
-			var j = i + 1;
-			if (arr[i] > arr[j]) {
+		for (let i = 0; i < arr.length - 1; i++) {
+			let j = i + 1;
+			if (cmp(arr[j], arr[i]) < 0) {
 				_swap(arr, i, j);
 				swapped = true;
 			}

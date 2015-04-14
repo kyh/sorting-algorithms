@@ -1,11 +1,11 @@
-function selectionsort(arr){
+function selectionsort(arr, cmp = (a, b) => a - b){
 	if (!arr.length || arr.length == 1) {
 		return arr;
 	}
-	for (var i = 0; i < arr.length - 1; i++) {
+	for (let i = 0; i < arr.length - 1; i++) {
 		var iMin = i;
-		for (var j = i + 1; j < arr.length; j++) {
-			if (arr[j] < arr[iMin]) {
+		for (let j = i + 1; j < arr.length; j++) {
+			if (cmp(arr[j], arr[iMin]) < 0) {
 				iMin = j;
 			}
 		}
