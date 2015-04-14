@@ -1,4 +1,4 @@
-function sort(arr){
+function selectionsort(arr){
 	if (!arr.length || arr.length == 1) {
 		return arr;
 	}
@@ -22,4 +22,4 @@ function _swap(arr, i, j){
 	arr[j] = temp;
 }
 
-module.exports = sort;
+module.exports = selectionsort;

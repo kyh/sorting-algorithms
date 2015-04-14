@@ -1,4 +1,4 @@
-function sort(arr){
+function bubblesort(arr){
 	var swapped;
 
 	if (!arr.length || arr.length == 1) {
@@ -25,4 +25,4 @@ function _swap(arr, i, j){
 	arr[j] = temp;
 }
 
-module.exports = sort;
+module.exports = bubblesort;
