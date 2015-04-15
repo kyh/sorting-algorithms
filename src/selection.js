@@ -3,7 +3,7 @@ function selectionsort(arr, cmp = (a, b) => a - b){
 		return arr;
 	}
 	for (let i = 0; i < arr.length - 1; i++) {
-		var iMin = i;
+		let iMin = i;
 		for (let j = i + 1; j < arr.length; j++) {
 			if (cmp(arr[j], arr[iMin]) < 0) {
 				iMin = j;
