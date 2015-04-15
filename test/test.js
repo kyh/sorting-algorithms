@@ -1,5 +1,6 @@
 var bubblesort = require('./bubble');
 var selectionsort = require('./selection');
+var insertionsort = require('./insertion');
 
 var people = [
   {name: 'Sindre', age: 30, place: 2},
@@ -53,10 +54,11 @@ function test(sortType) {
 			{"name": 'Sindre', "age": 30, "place": 2},
 			{"name": 'Matt', "age": 35, "place": 3},
 			{"name": 'Stephen', "age": 40, "place": 4}
-		]);
+      ]);
 	});
 
 }
 
 describe('bubblesort module', () => test(bubblesort));
 describe('selection sort module', () => test(selectionsort));
+describe('insertion sort module', () => test(insertionsort));
