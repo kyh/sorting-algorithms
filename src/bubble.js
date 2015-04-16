@@ -1,7 +1,7 @@
 export function bubblesort(arr, cmp = (a, b) => a - b){
 	var swapped;
 
-	if (!arr.length || arr.length == 1) {
+	if (arr.length < 2) {
 		return arr;
 	}
 

@@ -1,5 +1,5 @@
 export function insertionsort(arr, cmp = (a, b) => a - b){
-  if (!arr.length || arr.length == 1) {
+  if (arr.length < 2) {
     return arr;
   }
   for (let i = 1; i < arr.length; i++) {
