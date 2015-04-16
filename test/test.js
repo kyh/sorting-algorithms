@@ -11,7 +11,7 @@ var people = [
   {name: 'Matt', age: 35, place: 3}
 ];
 
-function _makeRandomArray(options = {precision: 2, multiplier: 100, size: 100}) {
+function _makeRandomArray(options = {precision: 0, multiplier: 100, size: 100}) {
 	var {precision, multiplier, size} = options;
 	var result = [];
 
@@ -52,12 +52,21 @@ function test(sortType) {
 
 	it('should work with (ascending) arrays of objects', () => {
 		sortType(people, objComparator).should.eql([
-			{"name": 'Passy', "age": 25, "place": 1},
-			{"name": 'Sindre', "age": 30, "place": 2},
-			{"name": 'Matt', "age": 35, "place": 3},
-			{"name": 'Stephen', "age": 40, "place": 4}
+  			{"name": 'Passy', "age": 25, "place": 1},
+  			{"name": 'Sindre', "age": 30, "place": 2},
+  			{"name": 'Matt', "age": 35, "place": 3},
+  			{"name": 'Stephen', "age": 40, "place": 4}
       ]);
 	});
+
+  it('should work with random non-sorted arrays', () => {
+    let array = _makeRandomArray();
+    let sortedArr = sortType(array);
+
+    for (let i = 0; i < sortedArr.length - 1; i += 1) {
+      (sortedArr[i] <= sortedArr[i + 1]).should.equal(true);
+    }
+  });
 
 }
 
