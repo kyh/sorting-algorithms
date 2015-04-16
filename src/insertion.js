@@ -1,4 +1,4 @@
-function insertionsort(arr, cmp = (a, b) => a - b){
+export function insertionsort(arr, cmp = (a, b) => a - b){
   if (!arr.length || arr.length == 1) {
     return arr;
   }
@@ -11,5 +11,3 @@ function insertionsort(arr, cmp = (a, b) => a - b){
   }
   return arr;
 }
-
-module.exports = insertionsort;

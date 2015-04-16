@@ -1,4 +1,4 @@
-function bubblesort(arr, cmp = (a, b) => a - b){
+export function bubblesort(arr, cmp = (a, b) => a - b){
 	var swapped;
 
 	if (!arr.length || arr.length == 1) {
@@ -24,5 +24,3 @@ function _swap(arr, i, j){
 	arr[i] = arr[j];
 	arr[j] = temp;
 }
-
-module.exports = bubblesort;

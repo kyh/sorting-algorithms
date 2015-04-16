@@ -1,6 +1,7 @@
-var bubblesort = require('./bubble');
-var selectionsort = require('./selection');
-var insertionsort = require('./insertion');
+import { bubblesort }     from './bubble';
+import { selectionsort }  from './selection';
+import { insertionsort }  from './insertion';
+import { mergesort }      from './merge';
 
 var people = [
   {name: 'Sindre', age: 30, place: 2},
@@ -62,3 +63,4 @@ function test(sortType) {
 describe('bubblesort module', () => test(bubblesort));
 describe('selection sort module', () => test(selectionsort));
 describe('insertion sort module', () => test(insertionsort));
+describe('merge sort module', () => test(mergesort));
