@@ -2,6 +2,7 @@ import { bubblesort }     from './bubble';
 import { selectionsort }  from './selection';
 import { insertionsort }  from './insertion';
 import { mergesort }      from './merge';
+import { quicksort }      from './quick';
 
 var people = [
   {name: 'Sindre', age: 30, place: 2},
@@ -64,3 +65,4 @@ describe('bubblesort module', () => test(bubblesort));
 describe('selection sort module', () => test(selectionsort));
 describe('insertion sort module', () => test(insertionsort));
 describe('merge sort module', () => test(mergesort));
+describe('quick sort module', () => test(quicksort));
