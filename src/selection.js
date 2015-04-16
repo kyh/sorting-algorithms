@@ -1,4 +1,4 @@
-function selectionsort(arr, cmp = (a, b) => a - b){
+export function selectionsort(arr, cmp = (a, b) => a - b){
 	if (!arr.length || arr.length == 1) {
 		return arr;
 	}
@@ -21,5 +21,3 @@ function _swap(arr, i, j){
 	arr[i] = arr[j];
 	arr[j] = temp;
 }
-
-module.exports = selectionsort;
