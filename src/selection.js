@@ -13,6 +13,7 @@ export function selectionsort(arr, cmp = (a, b) => a - b){
 			_swap(arr, i, iMin);
 		}
 	}
+
 	return arr;
 }
 
