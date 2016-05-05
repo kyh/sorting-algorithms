@@ -1,27 +1,21 @@
-export function mergesort(arr, cmp = (a, b) => a - b){
-  if (arr.length < 2) {
-    return arr;
-  }
+export function mergesort(arr, cmp = (a, b) => a - b) {
+  if (arr.length < 2) return arr;
 
-  var middle = Math.floor(arr.length / 2),
-      left   = arr.slice(0, middle),
-      right  = arr.slice(middle);
+  var middle = Math.floor(arr.length / 2);
+  var left = mergesort(arr.slice(0, middle), cmp);
+  var right = mergesort(arr.slice(middle), cmp);
 
-  return _merge(mergesort(left, cmp), mergesort(right, cmp), cmp);
+  return merge(left, right, cmp);
 }
 
-function _merge(left, right, cmp){
-  var result  = [],
-      iLeft   = 0,
-      iRight  = 0;
+function merge(left, right, cmp) {
+  var result = [];
 
-  while (iLeft < left.length && iRight < right.length){
-    if (cmp(left[iLeft], right[iRight]) < 0){
-      result.push(left[iLeft++]);
-    } else {
-      result.push(right[iRight++]);
-    }
+  while (left.length > 0 && right.length > 0) {
+    var smaller = (cmp(left[0], right[0]) < 0) ?
+      left.shift() : right.shift();
+    result.push(smaller);
   }
 
-  return result.concat(left.slice(iLeft)).concat(right.slice(iRight));
+  return result.concat(left.length ? left : right);
 }
