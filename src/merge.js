@@ -11,7 +11,7 @@ export function mergesort(arr, cmp = (a, b) => a - b) {
 function merge(left, right, cmp) {
   var result = [];
 
-  while (left.length > 0 && right.length > 0) {
+  while (left.length && right.length) {
     var smaller = (cmp(left[0], right[0]) < 0) ?
       left.shift() : right.shift();
     result.push(smaller);
